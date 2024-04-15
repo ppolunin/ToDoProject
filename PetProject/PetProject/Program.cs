@@ -3,20 +3,12 @@ using PetProject.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
-
-builder.Services.AddDbContext<MainDB>(opts =>
-{
-    opts.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
-});
-
+builder.Services.AddRouting(options => options.LowercaseUrls = true);
+builder.Services.AddDbContext<ToDoDB>();
 
 var app = builder.Build();
-
-// я не совсем пониаю вещи ниже. ћне нужно было чтобы RouteAttribute работал пустой.
-// Ќашел, как мне кажетс€ решение.
 
 app.UseRouting();
 
@@ -27,12 +19,10 @@ app.UseEndpoints(ep =>
 });
 #pragma warning restore ASP0014
 
-///////////////////////////////////
-
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger().UseSwaggerUI(opts => { opts.DocumentTitle = "ToDo API"; });
+    app.UseSwagger().UseSwaggerUI(opts => { opts.DocumentTitle = "DTOToDo API"; });
 }
 
 app.Run();

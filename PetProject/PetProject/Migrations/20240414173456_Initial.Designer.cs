@@ -11,7 +11,7 @@ using PetProject.Data;
 
 namespace PetProject.Migrations
 {
-    [DbContext(typeof(MainDB))]
+    [DbContext(typeof(ToDoDB))]
     [Migration("20240414173456_Initial")]
     partial class Initial
     {
