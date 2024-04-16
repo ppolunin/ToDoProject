@@ -22,7 +22,7 @@ app.UseEndpoints(ep =>
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger().UseSwaggerUI(opts => { opts.DocumentTitle = "DTOToDo API"; });
+    app.UseSwagger().UseSwaggerUI(opts => { opts.DocumentTitle = "ToDoDTO API"; });
 }
 
 app.Run();

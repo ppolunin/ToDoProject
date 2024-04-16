@@ -37,7 +37,7 @@ namespace PetProject.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Items");
+                    b.ToTable("ToDos");
                 });
 #pragma warning restore 612, 618
         }

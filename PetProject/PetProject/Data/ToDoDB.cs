@@ -5,7 +5,7 @@ namespace PetProject.Data
 {
     public sealed class ToDoDB(IConfiguration configuration, DbContextOptions<ToDoDB> opts) : DbContext(opts)
     {
-        public DbSet<ToDo> Items { get; init; }
+        public DbSet<ToDo> ToDos { get; init; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

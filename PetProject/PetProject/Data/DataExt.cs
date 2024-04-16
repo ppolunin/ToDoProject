@@ -5,21 +5,21 @@ namespace PetProject.Data
 {
     public static class DataExt
     {
-        public static ToDo ToEntity(this DTOToDo dto) => new()
+        public static ToDo ToEntity(this ToDoDTO dto) => new()
         {
             Id = dto.Id,
             Content = dto.Content,
             IsDone = dto.IsDone
         };
 
-        public static ToDo ToEntity(this DTOToDoForPost dto, in Guid id) => new()
+        public static ToDo ToEntity(this CreateToDoDTO dto, in Guid id) => new()
         {
             Id = id,
             Content = dto.Content,
             IsDone = dto.IsDone
         };
 
-        public static DTOToDo ToDTO(this ToDo entity) => new(
+        public static ToDoDTO ToDTO(this ToDo entity) => new(
             Id: entity.Id, 
             Content: entity.Content, 
             IsDone: entity.IsDone);
